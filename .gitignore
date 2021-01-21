@@ -1,3 +1,7 @@
+# Carpetas
+build/
+dist/
+
 # Compiled class file
 *.class
 
