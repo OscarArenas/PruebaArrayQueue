@@ -39,7 +39,9 @@ public class PruebaArrayQueue {
             cola.enqueue(codigos[i]);
         }
 
-        System.out.println("\nCola inicial: " + cola);
+        System.out.println("\nCola inicial: " );
+        System.out.println(" - Tamaño: " + cola.size());
+        System.out.println(" - Elementos: "+ cola);
 
         while (!cola.isEmpty()) {
             System.out.println("\nSe atendió el: " + cola.dequeue());

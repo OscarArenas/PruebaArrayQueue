@@ -60,6 +60,10 @@ public class ArrayQueue {
         return n == 0;
     }
 
+    public int size() {
+        return n;
+    }
+
     private void resize(int nc) {
         if (nc > 0 && nc >= n) {
             double[] newArray = new double[nc];
@@ -77,11 +81,22 @@ public class ArrayQueue {
         String text = "";
 
         if (n > 0) {
-            for (int i = 0; i < n - 1; i++) {
-                text += data[(front + i) % data.length] + ", ";
+            text += numberToString(data[front]);
+
+            for (int i = 1; i < n; i++) {
+                text += ", " + numberToString(data[(front + i) % data.length]);
             }
-            text += data[(front + n - 1) % data.length];
         }
         return "[" + text + "]";
+    }
+    
+    private String numberToString(double real) {
+        int entero = (int) real;
+        String cadena = real + "";
+
+        if (real == entero) {
+            cadena = entero + "";
+        }
+        return cadena;
     }
 }
